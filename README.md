@@ -80,6 +80,8 @@ Now xubuntu can be used in Vagrantfile as a name of a box.
 
 Note: Creating both boxes is possible using `packer build -parallel=false xubuntu.json`
 
+Note: In case downloading ISO fails with 404, iso_url in xubuntu.json needs to be updated to newer version
+
 ## TODO
 
 * make two Packer templates: one for Linux and the other for Mac (to handle OS-specific settings)
@@ -92,6 +94,5 @@ them on the GitLab server where user can download them via GitLab Web UI.
 
 ## Known Issues
 
-* Logging out does not work.
 * Not tested in OpenStack yet.
 * See Packer builder template for comments about building the images at MacOS.
