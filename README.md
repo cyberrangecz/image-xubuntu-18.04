@@ -36,16 +36,14 @@ Note: Missing commands to install Python, VirtualBox and Vagrant.
 
 ## Info about the build
 
-There are two or three user accounts:
+There is one user account in each image:
 
-*  "root" with password "toor"
-*  "debian" created by [cloud-init](https://cloudinit.readthedocs.io/en/latest/)
+*  "ubuntu" with password "ubuntu" created by [cloud-init](https://cloudinit.readthedocs.io/en/latest/)
 *  "vagrant" with password "vagrant" according to [vagrant documentation](https://www.vagrantup.com/docs/boxes/base.html#quot-vagrant-quot-user)
 
-vagrant user is only created for the VirtualBox/Vagrant box. 
+vagrant user is only created for the VirtualBox/Vagrant image and ubuntu only for QEMU.  
 
-SSH server is enabled. User "debian" can be used for SSH via key pair used for
-instantiation of the machine.
+SSH server is enabled.
 
 ## Usage
 
@@ -58,12 +56,12 @@ Building might be faster than approx. 1 hour with the default accelerator.
 # start the installation
 packer build -only=xubuntu-qemu xubuntu.json
 # run locally
-qemu-system-x86_64-spice -accel kvm -m size=4096 target-qemu/xubuntu
+qemu-system-x86_64 -accel kvm -m size=4096 target-qemu/xubuntu
 # run in OpenStack
 # import image to OpenStack
 openstack image create --file target-qemu/xubuntu --property hw_scsi_model=virtio-scsi --property hw_disk_bus=scsi --property hw_rng_model=virtio --property hw_qemu_guest_agent=yes --property os_require_quiesce=yes --property os_type=linux --property os_distro=ubuntu xubuntu-amd64
 # create server on OpenStack
-openstack server create --image b13b62af-6b6f-4f7c-a08b-fd7e0d263fe8 --flavor csirtmu.small2x4 --network d2fe6d71-c0c7-428f-84a8-84d8b7430bda xubuntu
+openstack server create --image b13b62af-6b6f-4f7c-a08b-fd7e0d263fe8 --flavor csirtmu.small2x4  xubuntu
 # get server console url
 openstack console url show xubuntu --spice
 ```
@@ -94,5 +92,4 @@ them on the GitLab server where user can download them via GitLab Web UI.
 
 ## Known Issues
 
-* Not tested in OpenStack yet.
 * See Packer builder template for comments about building the images at MacOS.

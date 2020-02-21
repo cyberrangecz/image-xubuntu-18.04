@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
-# disable ssh root login using password
-sed -i 's/#\?PermitRootLogin.*/PermitRootLogin without-password/g' /etc/ssh/sshd_config
+# disable root login using password
+sudo passwd -l root
 
 # cleanup
 apt-get -y autoremove

@@ -104,11 +104,17 @@
 	},
         {
             "scripts": [
-                "scripts/packages.sh",
                 "scripts/zerodisk.sh",
                 "scripts/desktop.sh"
             ],
             "type": "shell"
+        },
+        {
+            "scripts": [
+                "scripts/packages.sh"
+            ],
+            "type": "shell",
+            "only": ["xubuntu-qemu"]
         },
         {
             "scripts": [
