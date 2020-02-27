@@ -38,10 +38,12 @@ Note: Missing commands to install Python, VirtualBox and Vagrant.
 
 There is one user account in each image:
 
-*  "ubuntu" with password "ubuntu" created by [cloud-init](https://cloudinit.readthedocs.io/en/latest/)
+*  "ubuntu" created by [cloud-init](https://cloudinit.readthedocs.io/en/latest/)
 *  "vagrant" with password "vagrant" according to [vagrant documentation](https://www.vagrantup.com/docs/boxes/base.html#quot-vagrant-quot-user)
 
-vagrant user is only created for the VirtualBox/Vagrant image and ubuntu only for QEMU.  
+vagrant user is only created for the VirtualBox/Vagrant image and ubuntu only for QEMU.
+
+Password for ubuntu user is disabled, use SSH keys instead.
 
 SSH server is enabled.
 
@@ -92,4 +94,5 @@ them on the GitLab server where user can download them via GitLab Web UI.
 
 ## Known Issues
 
+* Gnome logout does not work, Xfce logout does. 
 * See Packer builder template for comments about building the images at MacOS.
