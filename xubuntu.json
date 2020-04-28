@@ -1,10 +1,9 @@
 {
     "_comment": "qemu at MacOS doesn't support kvm accelerator, it will use the default accelerator, if no accelerator is defined",
-    "_comment": "qemu at MacOS doesn't come with SDL support, use_default_display must be set to true",
+    "__comment": "qemu at MacOS doesn't come with SDL support, use_default_display must be set to true",
     "builders": [
         {
             "accelerator": "kvm",
-	    "use_default_display": "true",
             "boot_command": [
                 "<esc><wait>",
                 "<esc><wait>",
@@ -136,7 +135,7 @@
   	    "type": "vagrant",
   	    "output" : "target-vbox/xubuntu.box",
             "vagrantfile_template": "Vagrantfile-template",
-  	    "except": ["xubuntu-qemu"]
+  	    "only": ["xubuntu-vbox"]
        }
     ],
     "variables": {
