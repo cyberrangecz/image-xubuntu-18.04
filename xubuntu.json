@@ -110,7 +110,8 @@
         },
         {
             "scripts": [
-                "scripts/packages.sh"
+                "scripts/packages.sh",
+                "scripts/fixesQEMU.sh"
             ],
             "type": "shell",
             "only": ["xubuntu-qemu"]
@@ -118,13 +119,15 @@
         {
             "scripts": [
                 "scripts/addVagrantUser.sh",
-                "scripts/guestAdditions.sh"
+                "scripts/guestAdditions.sh",
+                "scripts/fixesVBox.sh"
             ],
             "type": "shell",
             "only": ["xubuntu-vbox"]
         },
         {
             "scripts": [
+                "scripts/fixes.sh",
                 "scripts/cleanup.sh"
             ],
             "type": "shell"
