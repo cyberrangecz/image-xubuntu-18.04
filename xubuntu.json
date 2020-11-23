@@ -1,9 +1,7 @@
 {
-    "_comment": "qemu at MacOS doesn't support kvm accelerator, it will use the default accelerator, if no accelerator is defined",
-    "__comment": "qemu at MacOS doesn't come with SDL support, use_default_display must be set to true",
     "builders": [
         {
-            "accelerator": "kvm",
+	        "use_default_display": "true",
             "boot_command": [
                 "<esc><wait>",
                 "<esc><wait>",
@@ -25,9 +23,8 @@
             "http_port_max": "{{user `http_port_max`}}",
             "http_port_min": "{{user `http_port_min`}}",
             "iso_checksum": "{{user `iso_checksum`}}",
-            "iso_checksum_type": "{{user `iso_checksum_type`}}",
             "iso_url": "{{user `iso_url`}}",
-            "name": "xubuntu-qemu",
+            "name": "qemu",
             "net_device": "virtio-net",
             "output_directory": "target-qemu",
             "qemuargs": [
@@ -47,7 +44,9 @@
             "ssh_wait_timeout": "{{user `ssh_wait_timeout`}}",
             "type": "qemu",
             "vm_name": "{{user `vm_name`}}",
-            "vnc_bind_address": "{{user `vnc_bind_address`}}"
+            "vnc_port_min": "{{user `vnc_vrdp_port`}}",
+            "vnc_port_max": "{{user `vnc_vrdp_port`}}",
+            "vnc_bind_address": "{{user `vnc_vrdp_bind_address`}}"
         },
         {
             "boot_command": [
@@ -69,9 +68,8 @@
             "http_port_max": "{{user `http_port_max`}}",
             "http_port_min": "{{user `http_port_min`}}",
             "iso_checksum": "{{user `iso_checksum`}}",
-            "iso_checksum_type": "{{user `iso_checksum_type`}}",
             "iso_url": "{{user `iso_url`}}",
-            "name": "xubuntu-vbox",
+            "name": "vbox",
             "vboxmanage": [
                 [
                     "modifyvm",
@@ -92,7 +90,10 @@
             "ssh_username": "{{user `ssh_username`}}",
             "ssh_wait_timeout": "{{user `ssh_wait_timeout`}}",
             "type": "virtualbox-iso",
-            "vm_name": "{{user `vm_name`}}"
+            "vm_name": "{{user `vm_name`}}",
+            "vrdp_port_min": "{{user `vnc_vrdp_port`}}",
+            "vrdp_port_max": "{{user `vnc_vrdp_port`}}",
+            "vrdp_bind_address": "{{user `vnc_vrdp_bind_address`}}"
     	}
     ],
     "provisioners": [
@@ -114,7 +115,7 @@
                 "scripts/fixesQEMU.sh"
             ],
             "type": "shell",
-            "only": ["xubuntu-qemu"]
+            "only": ["qemu"]
         },
         {
             "scripts": [
@@ -123,7 +124,7 @@
                 "scripts/fixesVBox.sh"
             ],
             "type": "shell",
-            "only": ["xubuntu-vbox"]
+            "only": ["vbox"]
         },
         {
             "scripts": [
@@ -138,20 +139,19 @@
   	    "type": "vagrant",
   	    "output" : "target-vbox/xubuntu.box",
             "vagrantfile_template": "Vagrantfile-template",
-  	    "only": ["xubuntu-vbox"]
+  	    "only": ["vbox"]
        }
     ],
     "variables": {
         "boot_wait": "10s",
         "cpus": "4",
         "disk_size": "16384",
-        "headless": "false",
+        "headless": "true",
         "http_directory": "http",
         "http_port_max": "10089",
         "http_port_min": "10082",
-        "iso_checksum": "e2ecdace33c939527cbc9e8d23576381c493b071107207d2040af72595f8990b",
-        "iso_checksum_type": "sha256",
-        "iso_url": "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.4-server-amd64.iso",
+        "iso_checksum": "8c5fc24894394035402f66f3824beb7234b757dd2b5531379cb310cedfdf0996",
+        "iso_url": "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.5-server-amd64.iso",
         "memory_size": "4096",
         "shutdown_command": "shutdown -P now",
         "ssh_password": "toor",
@@ -159,6 +159,7 @@
         "ssh_username": "root",
         "ssh_wait_timeout": "90m",
         "vm_name": "xubuntu",
-        "vnc_bind_address": "0.0.0.0"
+        "vnc_vrdp_bind_address": "127.0.0.1",
+        "vnc_vrdp_port": "5900"
     }
 }
