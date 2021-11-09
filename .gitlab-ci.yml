@@ -6,3 +6,4 @@ variables:
   NAME: "xubuntu"
   TYPE: "linux"
   DISTRO: "ubuntu"
+  GUI_ACCESS: "true"
