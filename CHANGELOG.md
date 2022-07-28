@@ -1,6 +1,6 @@
 # Changelog
 
-## [qemu-0.2.2], [vbox-0.2.2] - 2021-12-01
+## [qemu-0.2.3], [vbox-0.2.3] - 2021-12-01
 ### Added
 - Copy paste function of VNC is enabled on GUI startup 
 
@@ -22,5 +22,5 @@
 [qemu-0.2.0]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/qemu-0.2.0
 [vbox-0.2.0]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/vbox-0.2.0
 [qemu-0.2.1]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/qemu-0.2.1
-[qemu-0.2.2]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/qemu-0.2.2
-[vbox-0.2.2]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/vbox-0.2.2
+[qemu-0.2.3]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/qemu-0.2.3
+[vbox-0.2.3]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/vbox-0.2.3
