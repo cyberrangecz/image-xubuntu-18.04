@@ -1,5 +1,9 @@
 # Changelog
 
+## [qemu-0.2.2], [vbox-0.2.2] - 2021-12-01
+### Added
+- Copy paste function of VNC is enabled on GUI startup
+
 ## [qemu-0.2.1] - 2022-01-29
 ### Fixed
 - Hostname is added on boot to /etc/hosts
