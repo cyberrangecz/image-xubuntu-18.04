@@ -22,3 +22,5 @@
 [qemu-0.2.0]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/qemu-0.2.0
 [vbox-0.2.0]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/vbox-0.2.0
 [qemu-0.2.1]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/qemu-0.2.1
+[qemu-0.2.2]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/qemu-0.2.2
+[vbox-0.2.2]: https://gitlab.ics.muni.cz/muni-kypo-images/xubuntu-18.04/-/tree/vbox-0.2.2
