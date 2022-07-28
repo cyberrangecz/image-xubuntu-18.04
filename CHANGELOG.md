@@ -2,7 +2,7 @@
 
 ## [qemu-0.2.3], [vbox-0.2.3] - 2021-12-01
 ### Added
-- Copy paste function of VNC is enabled on GUI startup 
+- Copy paste function of VNC is enabled on GUI startup
 
 ## [qemu-0.2.1] - 2022-01-29
 ### Fixed
