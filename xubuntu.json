@@ -130,7 +130,8 @@
             "scripts": [
                 "scripts/fixes.sh",
                 "scripts/cleanup.sh",
-                "scripts/vnc.sh" 
+                "scripts/vnc.sh",
+                "scripts/vnccopypaste.sh" 
             ],
             "type": "shell"
         }
